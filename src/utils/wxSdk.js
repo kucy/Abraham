@@ -18,22 +18,30 @@ export default class TaroSdk {
 
   static uploadFile(token, path) {
     return new Promise(resolve => {
+
       Taro.uploadFile({
         url: `${baseUrl}/image/upload`,
         name: "file",
+        fileName: 'file',
         filePath: path,
+        fileType: 'image',
         formData: {
           token: token
-        }
+        },
       }).then(result => {
         resolve(result);
+      }).catch(err => {
+        console.log('上传图片失败：', err)
+        resolve({
+          result: []
+        })
       });
     });
   }
   static aiPhoto(params) {
     return new Promise(resolve => {
       this.uploadFile(params.token, params.file).then(res => {
-        const data = JSON.parse(res.data);
+        const data = typeof res.data === 'string' ? JSON.parse(res.data) : res.data
         resolve(data);
       });
     });

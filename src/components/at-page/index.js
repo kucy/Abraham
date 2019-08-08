@@ -26,7 +26,7 @@ export default class AtPage extends Component {
           </SwiperItem>
         </Swiper>
         {this.props.children}
-        <Button className='share'>分享给朋友</Button>
+        <Button className='share' open-type='share'>分享给朋友</Button>
       </View>
     );
   }

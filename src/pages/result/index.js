@@ -33,6 +33,7 @@ export default class Result extends Component {
 
   uploadFile(params) {
     TaroSdk.aiPhoto(params).then(res => {
+      console.log('uploadEnd: ', res)
       this.setState({
         data: res.result
       });
@@ -92,6 +93,7 @@ export default class Result extends Component {
 
           <View className='content_footer'>
             <Input
+              className='input'
               onInput={this.onChange.bind(this)}
               value={this.state.value}
               placeholder='蠢AI让我们人类告诉你是什么'

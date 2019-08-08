@@ -17,7 +17,7 @@ const interceptor = function(chain) {
 };
 
 Taro.addInterceptor(interceptor);
-Taro.addInterceptor(Taro.interceptors.logInterceptor);
+// Taro.addInterceptor(Taro.interceptors.logInterceptor);
 Taro.addInterceptor(Taro.interceptors.timeoutInterceptor);
 
 const http = ({ url = "", params, ...other } = {}) => {
@@ -41,6 +41,8 @@ const http = ({ url = "", params, ...other } = {}) => {
         Taro.hideLoading();
         resolve(res.data);
       }
+    }).catch(err => {
+      console.log('request err: ', err)
     });
   });
 };

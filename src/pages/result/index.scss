@@ -60,7 +60,9 @@ page {
             margin-top: $spacing-h-xl;
             padding: 0 $spacing-h-xl 0 $spacing-h-xl;
 
-            input {
+            .input {
+                width: 100%;
+                box-sizing: border-box;
                 height: 70px;
                 font-size: $font-size-md;
                 padding: 0 $spacing-h-lg 0 $spacing-h-lg;

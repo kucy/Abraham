@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "Abraham",
   "description": "Abraham",
-  "appid": "touristappid",
+  "appid": "wx047afda668a7540d",
   "setting": {
     "urlCheck": true,
     "es6": false,

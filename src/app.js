@@ -27,7 +27,9 @@ class App extends Component {
   };
 
   componentWillMount() {
-    http.login();
+    if (process.env.TARO_ENV !== 'alipay') {
+      http.login();
+    }
     TaroSdk.getBaiduToken();
   }
 
